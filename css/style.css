@@ -99,3 +99,7 @@ button:active {
   margin-bottom: 22px;
   margin-right: 22px;
 }
+
+.flip {
+    transform: rotateY(180deg);
+  }
