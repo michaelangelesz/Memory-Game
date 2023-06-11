@@ -1,0 +1,50 @@
+[
+  {
+    "image": "../assets/0_theFool.jpeg",
+    "name": "The Fool"
+  },
+  {
+    "image": "../assets/1_theMagician.jpeg",
+    "name": "The Magician"
+  },
+  {
+    "image": "../assets/2_theHighPriestess.jpeg",
+    "name": "The High Priestess"
+  },
+  {
+    "image": "../assets/3_theEmpress.jpeg",
+    "name": "The Empress"
+  },
+  {
+    "image": "../assets/4_theEmperor.jpeg",
+    "name": "The Emperor"
+  },
+  {
+    "image": "../assets/5_theHierophant.jpeg",
+    "name": "The Hierophant"
+  },
+  {
+    "image": "../assets/6_theLovers.jpeg",
+    "name": "The Lovers"
+  },
+  {
+    "image": "../assets/7_theChariot.jpeg",
+    "name": "The Chariot"
+  },
+  {
+    "image": "../assets/8_Strength.jpeg",
+    "name": "Strength"
+  },
+  {
+    "image": "../assets/9_theHermit.jpeg",
+    "name": "The Hermit"
+  },
+  {
+    "image": "../assets/10_WheelofFortune.jpeg",
+    "name": "Wheel of Fortune"
+  },
+  {
+    "image": "../assets/11_Justice.jpeg",
+    "name": "Justice"
+  }
+]
