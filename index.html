@@ -9,11 +9,11 @@
   </head>
   <body>
     <h1>Memory Game</h1>
-    <div class="button-container">
-      <button id="start-button">Start Clock</button>
-      <button id="reset-button">New Game</button>
+    <div class="actions">
+      <button id="start-button" onclick="timer()">Start Clock</button>
+      <button id="reset-button" onclick="restart()">New Game</button>
     </div>
-    <div class="card-container">
+    <div class="grid-container">
       <div class="card-one">
         <div class="card"></div>
       </div>
@@ -81,5 +81,6 @@
         <div class="card"></div>
       </div>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
