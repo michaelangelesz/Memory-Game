@@ -90,11 +90,10 @@
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   }
   
   .memory-card:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
     transition: transform .2s;
   }
   
@@ -111,6 +110,7 @@
     border-radius: 11px;
     background: antiquewhite;
     backface-visibility: hidden;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.9);
     top: 0;
     left: 0;
   }
