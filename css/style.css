@@ -20,6 +20,9 @@
   h1 {
     color: rgb(237, 202, 176);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(66, 33, 9);
     height: 11vh;
     width: 100vw;
@@ -31,6 +34,7 @@
       transparent 100%
     );
     margin-bottom: 11px;
+    margin-right: 22px;
   }
 
   @font-face {
