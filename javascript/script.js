@@ -5,4 +5,4 @@ console.log("I was clicked");
 console.log(this);
 }
 
-cards forEach(card => card.addEventListener("click", flipCard));
+cards.forEach(card => card.addEventListener("click", flipCard));
