@@ -2,8 +2,11 @@ const cards = document.querySelectorAll(".memory-card");
 const flipSound = new Audio("assets/cardflip.mp3");
 flipSound.volume = 0.5;
 flipSound.playbackRate = 2;
+const unflipSound = new Audio("assets/unflip.mp3");
+unflipSound.volume = 0.3;
+unflipSound.playbackRate = 2;
 
-// declare match variables
+// declare variables
 let hasFlippedCard = false;
 let firstCard, secondCard;
 
@@ -15,23 +18,21 @@ function flipCard() {
     // first click
     hasFlippedCard = true;
     firstCard = this;
-  } else {
-    // second click
-    hasFlippedCard = false;
-    secondCard = this;
 
-    checkForMatch();
+    return;
   }
+  // second click
+  hasFlippedCard = false;
+  secondCard = this;
+
+  checkForMatch();
 }
 
 function checkForMatch() {
-  if (firstCard.dataset.framework === secondCard.dataset.framework) {
-    // it's a match!
-    disableCards();
-  } else {
-    // not a match 
-    unflipCards();
-  }
+  // ternary operator is if/else statement in one line
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  // condition ? true : false
+  isMatch ? disableCards() : unflipCards();
 
   function disableCards() {
     firstCard.removeEventListener("click", flipCard);
@@ -40,7 +41,7 @@ function checkForMatch() {
 
   function unflipCards() {
     setTimeout(() => {
-      flipSound.play();
+      unflipSound.play();
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
     }, 1500);
