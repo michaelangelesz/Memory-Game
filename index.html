@@ -1,246 +1,166 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <link rel='stylesheet' type='text/css' href='css/style.css' />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Memory Game</title>
   </head>
   <body>
     <h1>Memory Game</h1>
-    <div class='actions'>
-      <button id='start-button' onclick='timer()'>Start Clock</button>
-      <button id='reset-button' onclick='restart()'>New Game</button>
+    <div class="actions">
+      <button id="start-button" onclick="timer()">Start Clock</button>
+      <button id="reset-button" onclick="restart()">New Game</button>
     </div>
-    <section class='memory-game'>
+    <section class="memory-game">
 <!--The Magician-->
-      <div class='memory-card' data-framework="Magician">
+      <div class="memory-card" data-framework="Magician">
         <img
-          class='front-face'
-          src='assets/1_theMagician.jpeg'
-          alt='The Magician'
+          class="front-face"
+          src="assets/1_theMagician.jpeg"
+          alt="The Magician"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Magician">
+      <div class="memory-card" data-framework="Magician">
         <img
-          class='front-face'
-          src='assets/1_theMagician.jpeg'
-          alt='The Magician'
+          class="front-face"
+          src="assets/1_theMagician.jpeg"
+          alt="The Magician"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--The High Priestess-->
-      <div class='memory-card' data-framework="Priestess">
+      <div class="memory-card" data-framework="Priestess">
         <img
-          class='front-face'
-          src='assets/2_theHighPriestess.jpeg'
-          alt='The High Priestess'
+          class="front-face"
+          src="assets/2_theHighPriestess.jpeg"
+          alt="The High Priestess"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Priestess">
+      <div class="memory-card" data-framework="Priestess">
         <img
-          class='front-face'
-          src='assets/2_theHighPriestess.jpeg'
-          alt='The High Priestess'
+          class="front-face"
+          src="assets/2_theHighPriestess.jpeg"
+          alt="The High Priestess"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--The Empress-->
-      <div class='memory-card' data-framework="Empress">
+      <div class="memory-card" data-framework="Empress">
         <img
-          class='front-face'
-          src='assets/3_theEmpress.jpeg'
-          alt='The Empress'
+          class="front-face"
+          src="assets/3_theEmpress.jpeg"
+          alt="The Empress"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Empress">
+      <div class="memory-card" data-framework="Empress">
         <img
-          class='front-face'
-          src='assets/3_theEmpress.jpeg'
-          alt='The Empress'
+          class="front-face"
+          src="assets/3_theEmpress.jpeg"
+          alt="The Empress"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--The Emperor-->
-      <div class='memory-card' data-framework="Emperor">
+      <div class="memory-card" data-framework="Emperor">
         <img
-          class='front-face'
-          src='assets/4_theEmperor.jpeg'
-          alt='The Emperor'
+          class="front-face"
+          src="assets/4_theEmperor.jpeg"
+          alt="The Emperor"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Emperor">
+      <div class="memory-card" data-framework="Emperor">
         <img
-          class='front-face'
-          src='assets/4_theEmperor.jpeg'
-          alt='The Emperor'
+          class="front-face"
+          src="assets/4_theEmperor.jpeg"
+          alt="The Emperor"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--The Hierophant-->
-      <div class='memory-card' data-framework="Hierophant">
+      <div class="memory-card" data-framework="Hierophant">
         <img
-          class='front-face'
-          src='assets/5_theHierophant.jpeg'
-          alt='The Hierophant'
+          class="front-face"
+          src="assets/5_theHierophant.jpeg"
+          alt="The Hierophant"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Hierophant">
+      <div class="memory-card" data-framework="Hierophant">
         <img
-          class='front-face'
-          src='assets/5_theHierophant.jpeg'
-          alt='The Hierophant'
+          class="front-face"
+          src="assets/5_theHierophant.jpeg"
+          alt="The Hierophant"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--The Lovers-->
-      <div class='memory-card' data-framework="Lovers">
+      <div class="memory-card" data-framework="Lovers">
         <img
-          class='front-face'
-          src='assets/6_theLovers.jpeg'
-          alt='The Lovers'
+          class="front-face"
+          src="assets/6_theLovers.jpeg"
+          alt="The Lovers"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Lovers">
+      <div class="memory-card" data-framework="Lovers">
         <img
-          class='front-face'
-          src='assets/6_theLovers.jpeg'
-          alt='The Lovers'
+          class="front-face"
+          src="assets/6_theLovers.jpeg"
+          alt="The Lovers"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--The Chariot-->
-      <div class='memory-card' data-framework="Chariot">
+      <div class="memory-card" data-framework="Chariot">
         <img
-          class='front-face'
-          src='assets/7_theChariot.jpeg'
-          alt='The Chariot'
+          class="front-face"
+          src="assets/7_theChariot.jpeg"
+          alt="The Chariot"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Chariot">
+      <div class="memory-card" data-framework="Chariot">
         <img
-          class='front-face'
-          src='assets/7_theChariot.jpeg'
-          alt='The Chariot'
+          class="front-face"
+          src="assets/7_theChariot.jpeg"
+          alt="The Chariot"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        /> 
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--Strength-->
-      <div class='memory-card' data-framework="Strength">
-        <img
-          class='front-face'
-          src='assets/8_Strength.jpeg'
-          alt='Strength'
-        />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+      <div class="memory-card" data-framework="Strength">
+        <img class="front-face" src="assets/8_Strength.jpeg" alt="Strength" />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Strength">
-        <img
-          class='front-face'
-          src='assets/8_Strength.jpeg'
-          alt='Strength'
-        />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+      <div class="memory-card" data-framework="Strength">
+        <img class="front-face" src="assets/8_Strength.jpeg" alt="Strength" />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
 <!--The Hermit-->
-      <div class='memory-card' data-framework="Hermit">
+      <div class="memory-card" data-framework="Hermit">
         <img
-          class='front-face'
-          src='assets/9_theHermit.jpeg'
-          alt='The Hermit'
+          class="front-face"
+          src="assets/9_theHermit.jpeg"
+          alt="The Hermit"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-      <div class='memory-card' data-framework="Hermit">
+      <div class="memory-card" data-framework="Hermit">
         <img
-          class='front-face'
-          src='assets/9_theHermit.jpeg'
-          alt='The Hermit'
+          class="front-face"
+          src="assets/9_theHermit.jpeg"
+          alt="The Hermit"
         />
-        <img
-          class='back-face'
-          src='assets/backOfCard.jpg'
-          alt='Back of Card'
-        />
+        <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
     </section>
 
-    <script src='javascript/script.js'></script>
+    <script src="javascript/script.js"></script>
   </body>
 </html>
