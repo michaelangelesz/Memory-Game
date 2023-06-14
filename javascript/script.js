@@ -1,3 +1,5 @@
+const timeH = document.querySelector(".timer");
+
 const cards = document.querySelectorAll(".memory-card");
 const flipSound = new Audio("assets/cardflip.mp3");
 flipSound.volume = 0.5;
@@ -7,6 +9,33 @@ unflipSound.volume = 0.3;
 unflipSound.playbackRate = 2;
 
 // declare variables
+let timeSecond = 60;
+
+displayTime(timeSecond);
+
+const countDown = setInterval(() => {
+  timeSecond--;
+  //timeH.innerHTML = `00:${timeSecond}`;
+  displayTime(timeSecond);
+  if (timeSecond <= 0 || timeSecond < 1) {
+    endTime();
+    clearInterval(countDown);
+    setTimeout(() => {
+      alert("You lose! 😭😭😭 Try again!");
+    }, 333);
+  }
+}, 1000);
+
+function displayTime(second) {
+  const min = Math.floor(second / 60);
+  const sec = Math.floor(second % 60);
+  timeH.innerHTML = `${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}`;
+}
+
+function endTime() {
+  timeH.innerHTML = `😵‍💫 GAME OVER 😵‍💫`;
+}
+
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -68,7 +97,7 @@ function checkForMatch() {
   });
 })();
 
-function reloadPage() {
+function newGame() {
   location.reload();
 }
 
@@ -76,4 +105,5 @@ cards.forEach((card) => card.addEventListener("click", flipCard));
 
 // when first card is clicked, start timer
 // if (all cards are flipped <= 60s), win game
-// else, lose game
+// stop clock if all cards are flipped- for win
+// if timer stops before all cards are clicked, lock board, lose game

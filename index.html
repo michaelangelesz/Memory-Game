@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>Memory Game</title>
+    <title>Memory Tarot</title>
   </head>
   <body>
-    <h1>Memory Game</h1>
-    <div class="actions">
-      <div id="timer">01:00</button>
-      <button id="reset-button" onclick="reloadPage()">New Game</button>
-    </div>
+    <h1>Memory Tarot</h1>
+    <h2>Match all the cards in the time alloted to win!</h2>
+    <h2>Timer starts when first card is clicked</h2>
+    <!-- Timer here -->
+    <container>
+      <div class="timer">
+        <p>00:00</p>
+      </div>
+    </container>
     <section class="memory-game">
-<!--The Magician-->
+      <!--The Magician-->
       <div class="memory-card" data-framework="Magician">
         <img
           class="front-face"
@@ -31,7 +35,7 @@
         />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--The High Priestess-->
+      <!--The High Priestess-->
       <div class="memory-card" data-framework="Priestess">
         <img
           class="front-face"
@@ -48,7 +52,7 @@
         />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--The Empress-->
+      <!--The Empress-->
       <div class="memory-card" data-framework="Empress">
         <img
           class="front-face"
@@ -65,7 +69,7 @@
         />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--The Emperor-->
+      <!--The Emperor-->
       <div class="memory-card" data-framework="Emperor">
         <img
           class="front-face"
@@ -82,7 +86,7 @@
         />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--The Hierophant-->
+      <!--The Hierophant-->
       <div class="memory-card" data-framework="Hierophant">
         <img
           class="front-face"
@@ -99,7 +103,7 @@
         />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--The Lovers-->
+      <!--The Lovers-->
       <div class="memory-card" data-framework="Lovers">
         <img
           class="front-face"
@@ -116,7 +120,7 @@
         />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--The Chariot-->
+      <!--The Chariot-->
       <div class="memory-card" data-framework="Chariot">
         <img
           class="front-face"
@@ -133,7 +137,7 @@
         />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--Strength-->
+      <!--Strength-->
       <div class="memory-card" data-framework="Strength">
         <img class="front-face" src="assets/8_Strength.jpeg" alt="Strength" />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
@@ -142,7 +146,7 @@
         <img class="front-face" src="assets/8_Strength.jpeg" alt="Strength" />
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
-<!--The Hermit-->
+      <!--The Hermit-->
       <div class="memory-card" data-framework="Hermit">
         <img
           class="front-face"
@@ -160,7 +164,9 @@
         <img class="back-face" src="assets/backOfCard.jpg" alt="Back of Card" />
       </div>
     </section>
-
+    <div class="actions">
+      <button id="reset-button" onclick="newGame()">New Game</button>
+    </div>
     <script src="javascript/script.js"></script>
   </body>
 </html>
