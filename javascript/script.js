@@ -9,22 +9,27 @@ unflipSound.volume = 0.3;
 unflipSound.playbackRate = 2;
 
 // declare variables
+let intialFlip = false;
+
 let timeSecond = 60;
 
 displayTime(timeSecond);
 
-const countDown = setInterval(() => {
-  timeSecond--;
-  //timeH.innerHTML = `00:${timeSecond}`;
-  displayTime(timeSecond);
-  if (timeSecond <= 0 || timeSecond < 1) {
-    endTime();
-    clearInterval(countDown);
-    setTimeout(() => {
-      alert("You lose! 😭😭😭 Try again!");
-    }, 333);
-  }
-}, 1000);
+function startTimer() {
+    let seconds = timeSecond;
+    const countDown = setInterval(() => {
+        seconds--;
+        //timeH.innerHTML = `00:${seconds}`;
+        displayTime(seconds);
+        if (seconds <= 0 || seconds < 1) {
+          endTime();
+          clearInterval(countDown);
+          setTimeout(() => {
+            alert("You lose! 😭😭😭 Try again!");
+          }, 333);
+        }
+      }, 1000);
+}
 
 function displayTime(second) {
   const min = Math.floor(second / 60);
@@ -41,7 +46,12 @@ let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
-  // locks board so you can't click more than 2 cards at a time
+  if (!intialFlip) {
+    startTimer();
+    intialFlip = true;
+}
+  
+    // locks board so you can't click more than 2 cards at a time
   if (lockBoard) return;
   // prevents double clicking on same card
   if (this === firstCard) return;
@@ -103,7 +113,9 @@ function newGame() {
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
-// when first card is clicked, start timer
-// if (all cards are flipped <= 60s), win game
+
 // stop clock if all cards are flipped- for win
-// if timer stops before all cards are clicked, lock board, lose game
+//cards[cards.length - 1].endTime();
+
+// if (all cards are flipped <= 60s), win game
+// if timer stops before all cards are clicked, lose game
