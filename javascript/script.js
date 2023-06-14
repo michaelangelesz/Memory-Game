@@ -18,7 +18,7 @@ function flipCard() {
   if (this === firstCard) return;
   this.classList.add("flip");
   flipSound.play();
-  
+
   if (!hasFlippedCard) {
     // first click
     hasFlippedCard = true;
@@ -62,10 +62,18 @@ function checkForMatch() {
 }
 
 (function shuffle() {
-    cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 18);
-        card.style.order = randomPos;
-    });
+  cards.forEach((card) => {
+    let randomPos = Math.floor(Math.random() * 18);
+    card.style.order = randomPos;
+  });
 })();
 
+function reloadPage() {
+  location.reload();
+}
+
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+// when first card is clicked, start timer
+// if (all cards are flipped <= 60s), win game
+// else, lose game
