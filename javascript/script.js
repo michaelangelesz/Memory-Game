@@ -9,26 +9,29 @@ unflipSound.volume = 0.3;
 unflipSound.playbackRate = 2;
 
 // declare variables
-let intialFlip = false;
-
-let timeSecond = 60;
+let countDown;
+let timeSecond = 300;
+// let matchedCards = 0; // counter variable for flipped cards
 
 displayTime(timeSecond);
 
 function startTimer() {
-    let seconds = timeSecond;
-    const countDown = setInterval(() => {
-        seconds--;
-        //timeH.innerHTML = `00:${seconds}`;
-        displayTime(seconds);
-        if (seconds <= 0 || seconds < 1) {
-          endTime();
-          clearInterval(countDown);
-          setTimeout(() => {
-            alert("You lose! 😭😭😭 Try again!");
-          }, 333);
-        }
-      }, 1000);
+  let seconds = timeSecond;
+  const countDown = setInterval(() => {
+    seconds--;
+    //timeH.innerHTML = `00:${seconds}`;
+    displayTime(seconds);
+    if (seconds <= 0 || seconds < 1) {
+      endTime();
+      clearInterval(countDown);
+    // //   setTimeout(() => {
+    // //     alert("You lose! 😭😭😭 Try again!");
+    // //   }, 333);
+    // } else if (matchedCards === 18) {
+    //     winGame();
+    //     clearInterval(countDown);
+    }
+  }, 1000);
 }
 
 function displayTime(second) {
@@ -39,8 +42,16 @@ function displayTime(second) {
 
 function endTime() {
   timeH.innerHTML = `😵‍💫 GAME OVER 😵‍💫`;
+  lockBoard = true;
 }
 
+function winGame() {
+
+    timeH.innerHTML = `🤩 YOU WIN! 🤩`;
+    console.log("win");
+}
+
+let intialFlip = false;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -49,9 +60,9 @@ function flipCard() {
   if (!intialFlip) {
     startTimer();
     intialFlip = true;
-}
-  
-    // locks board so you can't click more than 2 cards at a time
+  }
+
+  // locks board so you can't click more than 2 cards at a time
   if (lockBoard) return;
   // prevents double clicking on same card
   if (this === firstCard) return;
@@ -68,6 +79,13 @@ function flipCard() {
   // second click
   secondCard = this;
   checkForMatch();
+
+// //   // increment the counter variable
+//   matchedCards++;
+//   if (allCardsFlipped(matchedCards === 18)) {
+//     stopTimer();
+//     //alert("🎉Congratulations!🎉 You matched all the cards!!👏👏👏");
+//   }
 }
 
 function checkForMatch() {
@@ -100,6 +118,19 @@ function checkForMatch() {
   }
 }
 
+// function allCardsFlipped() {
+//     let allFlipped = true;
+//     cards.forEach((card) => {
+//       if (!card.classList.contains("flip")) {
+//         allFlipped = false;
+//       }
+//     });
+//     if (allFlipped) {
+//       clearInterval(timerInterval); // clear the interval when all cards are flipped
+//       alert("Congratulations! You have matched all the cards!");
+//     }
+//   }
+
 (function shuffle() {
   cards.forEach((card) => {
     let randomPos = Math.floor(Math.random() * 18);
@@ -107,15 +138,16 @@ function checkForMatch() {
   });
 })();
 
+// function stopTimer() {
+//   clearInterval(countDown);
+//   timeH.innerHTML = `🤩 YOU WIN! 🤩`;
+// }
+
 function newGame() {
   location.reload();
 }
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
-
-// stop clock if all cards are flipped- for win
-//cards[cards.length - 1].endTime();
-
-// if (all cards are flipped <= 60s), win game
-// if timer stops before all cards are clicked, lose game
+// // // stop the timer when all cards are matched
+// cards[cards.length - 0].addEventListener("matchedCards === 18", stopTimer);

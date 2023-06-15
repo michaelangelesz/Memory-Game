@@ -107,6 +107,7 @@ button:active {
   width: 900px;
   height: 625px;
   margin: auto;
+  margin-top: 11px;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
