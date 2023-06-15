@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../json"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Memory-Game"
+	}
+}
