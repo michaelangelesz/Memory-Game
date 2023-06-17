@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Memory-Game"
+		"liveServer.settings.multiRootWorkspaceName": "Memory-Game",
+		"liveServer.settings.port": 5502
 	}
 }
