@@ -23,7 +23,6 @@ function startTimer() {
     displayTime(seconds);
     if (seconds <= 0 || seconds < 1) {
       endTime();
-      clearInterval(countDown);
     }
   }, 1000);
 }
@@ -101,25 +100,12 @@ function checkForMatch() {
   }
 }
 
-function allCardsFlipped() {
-    let allFlipped = true;
-    cards.forEach((card) => {
-      if (!card.classList.contains("flip")) {
-        allFlipped = false;
-      }
-    });
-    if (allFlipped) {
-      clearInterval(timerInterval); // clear the interval when all cards are flipped
-      alert("Congratulations! You have matched all the cards!");
-    }
-  }
-
-(function shuffle() {
-  cards.forEach((card) => {
-    let randomPos = Math.floor(Math.random() * 18);
-    card.style.order = randomPos;
-  });
-})();
+// (function shuffle() {
+//   cards.forEach((card) => {
+//     let randomPos = Math.floor(Math.random() * 18);
+//     card.style.order = randomPos;
+//   });
+// })();
 
 function endTime() {
   timeH.style.color = "rgb(237, 202, 176)";
@@ -151,9 +137,11 @@ function endTime() {
 }
 
 function winGame() {
-  endTime();
   const text = "🤩 Awesome! You win! 🤩";
   setTimeout(() => {
+    // make the timer stop upon winning
+    clearInterval(countDown); // Call clearInterval() to stop the timer
+    // create message div
     const messageDiv = document.createElement("div");
     messageDiv.setAttribute("id", "message");
     messageDiv.textContent = text;
