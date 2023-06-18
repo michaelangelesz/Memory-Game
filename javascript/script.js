@@ -1,7 +1,7 @@
 const cards = document.querySelectorAll(".memory-card");
 
 const playerLivesCount = document.querySelector("span");
-let playerLives = 12;
+let playerLives = 1;
 
 // link text
 playerLivesCount.textContent = playerLives;
@@ -85,7 +85,7 @@ function checkForMatch() {
 
 function gameOver() {
   lockBoard = true;
-  const text = "Egads! Foiled again! 😭";
+  const text = "Egads! 😵‍💫 Foiled again!";
   setTimeout(() => {
     const messageDiv = document.createElement("div");
     messageDiv.setAttribute("id", "message");
@@ -93,7 +93,7 @@ function gameOver() {
 
     // create play again button
     const playAgainBtn = document.createElement("button");
-    playAgainBtn.textContent = "Play Again";
+    playAgainBtn.textContent = "New Game";
     playAgainBtn.addEventListener("click", () => {
       newGame();
       messageDiv.style.opacity = "0";
