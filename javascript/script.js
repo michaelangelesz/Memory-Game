@@ -1,37 +1,10 @@
-const timeH = document.querySelector(".timer");
-
 const cards = document.querySelectorAll(".memory-card");
-const flipSound = new Audio("assets/cardflip.mp3");
-flipSound.volume = 0.5;
-flipSound.playbackRate = 2;
-const unflipSound = new Audio("assets/unflip.mp3");
-unflipSound.volume = 0.3;
-unflipSound.playbackRate = 2;
 
+const playerLivesCount = document.querySelector("span");
+let playerLives = 12;
 
-// declare variables
-let countDown;
-let timeSecond = 60;
-
-displayTime(timeSecond);
-
-function startTimer() {
-  let seconds = timeSecond;
-  const countDown = setInterval(() => {
-    seconds--;
-    //timeH.innerHTML = `00:${seconds}`;
-    displayTime(seconds);
-    if (seconds <= 0 || seconds < 1) {
-      endTime();
-    }
-  }, 1000);
-}
-
-function displayTime(second) {
-  const min = Math.floor(second / 60);
-  const sec = Math.floor(second % 60);
-  timeH.innerHTML = `${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}`;
-}
+// link text
+playerLivesCount.textContent = playerLives;
 
 let intialFlip = false;
 let hasFlippedCard = false;
@@ -40,7 +13,6 @@ let firstCard, secondCard;
 
 function flipCard() {
   if (!intialFlip) {
-    startTimer();
     intialFlip = true;
   }
 
@@ -49,7 +21,6 @@ function flipCard() {
   // prevents double clicking on same card
   if (this === firstCard) return;
   this.classList.add("flip");
-  flipSound.play();
 
   if (!hasFlippedCard) {
     // first click
@@ -86,12 +57,17 @@ function checkForMatch() {
     // lock the board
     lockBoard = true;
     setTimeout(() => {
-      unflipSound.play();
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
       // unlocks board after 1.5 seconds
       resetBoard();
     }, 1500);
+    playerLives--;
+    playerLivesCount.textContent = playerLives;
+    if (playerLives === 0)
+      setTimeout(() => {
+        gameOver();
+      }, 500);
   }
 
   function resetBoard() {
@@ -100,15 +76,14 @@ function checkForMatch() {
   }
 }
 
-// (function shuffle() {
-//   cards.forEach((card) => {
-//     let randomPos = Math.floor(Math.random() * 18);
-//     card.style.order = randomPos;
-//   });
-// })();
+(function shuffle() {
+  cards.forEach((card) => {
+    let randomPos = Math.floor(Math.random() * 18);
+    card.style.order = randomPos;
+  });
+})();
 
-function endTime() {
-  timeH.style.color = "rgb(237, 202, 176)";
+function gameOver() {
   lockBoard = true;
   const text = "Egads! Foiled again! 😭";
   setTimeout(() => {
@@ -139,8 +114,6 @@ function endTime() {
 function winGame() {
   const text = "🤩 Awesome! You win! 🤩";
   setTimeout(() => {
-    // make the timer stop upon winning
-    clearInterval(countDown); // Call clearInterval() to stop the timer
     // create message div
     const messageDiv = document.createElement("div");
     messageDiv.setAttribute("id", "message");

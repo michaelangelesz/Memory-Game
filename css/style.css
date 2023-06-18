@@ -17,7 +17,7 @@ body {
   margin: 22px auto;
 }
 
-h1 {
+header {
   color: rgb(237, 202, 176);
   text-align: center;
   font-size: 44px;
@@ -38,11 +38,16 @@ h1 {
   margin-bottom: 11px;
 }
 
+h1 {
+  font-family: papyrus;
+  font-size: 3rem;
+}
+
 h2 {
   color: rgb(66, 33, 9);
   text-align: center;
   letter-spacing: 1.1px;
-  font-size: 22px;
+  font-size: 27px;
   display: flex;
   justify-content: center;
   align-items: center;
