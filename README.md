@@ -1,7 +1,9 @@
 ## Milestone Project 1
 # Memory Game
 
-As a kid, Memory was a favorite game. This game is dedicated to those carefree days of old school board games
+As a kid, Memory was a favorite game. This game is dedicated to those carefree days of old school board games. As an adult, I have come to love the game of Tarot. Here I get to combine the two in a new, modern atmosphere! 
+
+When the user arrives to my game, they are given a certain amount of lives. When they begin flipping the cards, each mismatch takes a life. When the lives count reaches zero, the game ends and a game-over screen appears, in this case with the text "Egads! 😵‍💫 Foiled again!". However, if the user is able to reveal all the matches with the lives provided, a win screen appears with the message "🤩 Awesome! You win! 🤩". In either case, the user is presented with a button to start a new game.
 
 
 ## Rider Waite Smith Tarot Deck history and citation:
