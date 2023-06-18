@@ -1,4 +1,10 @@
 const cards = document.querySelectorAll(".memory-card");
+const flipSound = new Audio("assets/cardflip.mp3");
+flipSound.volume = 0.5;
+flipSound.playbackRate = 2;
+const unflipSound = new Audio("assets/unflip.mp3");
+unflipSound.volume = 0.3;
+unflipSound.playbackRate = 2;
 
 const playerLivesCount = document.querySelector("span");
 let playerLives = 12;
@@ -21,6 +27,7 @@ function flipCard() {
   // prevents double clicking on same card
   if (this === firstCard) return;
   this.classList.add("flip");
+  flipSound.play();
 
   if (!hasFlippedCard) {
     // first click
@@ -57,6 +64,7 @@ function checkForMatch() {
     // lock the board
     lockBoard = true;
     setTimeout(() => {
+      unflipSound.play();
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
       // unlocks board after 1.5 seconds
