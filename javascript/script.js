@@ -11,7 +11,7 @@ unflipSound.playbackRate = 2;
 
 // declare variables
 let countDown;
-let timeSecond = 30;
+let timeSecond = 60;
 
 displayTime(timeSecond);
 
@@ -114,14 +114,68 @@ function allCardsFlipped() {
     }
   }
 
+(function shuffle() {
+  cards.forEach((card) => {
+    let randomPos = Math.floor(Math.random() * 18);
+    card.style.order = randomPos;
+  });
+})();
+
 function endTime() {
-  timeH.innerHTML = `😵‍💫 GAME OVER 😵‍💫`;
+  timeH.style.color = "rgb(237, 202, 176)";
   lockBoard = true;
+  const text = "Egads! Foiled again! 😭";
+  setTimeout(() => {
+    const messageDiv = document.createElement("div");
+    messageDiv.setAttribute("id", "message");
+    messageDiv.textContent = text;
+
+    // create play again button
+    const playAgainBtn = document.createElement("button");
+    playAgainBtn.textContent = "Play Again";
+    playAgainBtn.addEventListener("click", () => {
+      newGame();
+      messageDiv.style.opacity = "0";
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 300);
+    });
+
+    // add play again button to message div
+    messageDiv.appendChild(playAgainBtn);
+    document.body.appendChild(messageDiv);
+
+    // animate message div
+    messageDiv.style.opacity = "1";
+  }, 500);
 }
 
 function winGame() {
-    
-    timeH.innerHTML = `🤩 YOU WIN! 🤩`;
+  endTime();
+  const text = "🤩 Awesome! You win! 🤩";
+  setTimeout(() => {
+    const messageDiv = document.createElement("div");
+    messageDiv.setAttribute("id", "message");
+    messageDiv.textContent = text;
+
+    // create play again button
+    const playAgainBtn = document.createElement("button");
+    playAgainBtn.textContent = "Play Again";
+    playAgainBtn.addEventListener("click", () => {
+      newGame();
+      messageDiv.style.opacity = "0";
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 300);
+    });
+
+    // add play again button to message div
+    messageDiv.appendChild(playAgainBtn);
+    document.body.appendChild(messageDiv);
+
+    // animate message div
+    messageDiv.style.opacity = "1";
+  }, 500);
     console.log("Count has reached 9.");
 }
 
