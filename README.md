@@ -1,5 +1,8 @@
+## Milestone Project 1
 # Memory Game
- Milestone Project 1
+
+As a kid, Memory was a favorite game. This game is dedicated to those carefree days of old school board games
+
 
 ## Rider Waite Smith Tarot Deck history and citation:
 
