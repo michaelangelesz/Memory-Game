@@ -1,7 +1,7 @@
 const cards = document.querySelectorAll(".memory-card");
 
 const playerLivesCount = document.querySelector("span");
-let playerLives = 1;
+let playerLives = 12;
 
 // link text
 playerLivesCount.textContent = playerLives;
