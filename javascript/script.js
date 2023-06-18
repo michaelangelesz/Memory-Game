@@ -1,4 +1,7 @@
+// the memory cards
 const cards = document.querySelectorAll(".memory-card");
+
+// sound effects
 const flipSound = new Audio("assets/cardflip.mp3");
 flipSound.volume = 0.5;
 flipSound.playbackRate = 2;
@@ -6,17 +9,20 @@ const unflipSound = new Audio("assets/unflip.mp3");
 unflipSound.volume = 0.3;
 unflipSound.playbackRate = 2;
 
+// player lives
 const playerLivesCount = document.querySelector("span");
 let playerLives = 12;
 
 // link text
 playerLivesCount.textContent = playerLives;
 
+// game variables
 let intialFlip = false;
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
+// flip card function
 function flipCard() {
   if (!intialFlip) {
     intialFlip = true;
@@ -41,25 +47,30 @@ function flipCard() {
   checkForMatch();
 }
 
+// card match count
 let count = 0;
 
+// check for match function
 function checkForMatch() {
   // ternary operator is if/else statement in one line
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
   // condition ? true : false
   isMatch ? disableCards() : unflipCards();
 
+  // if cards match, disable them
   function disableCards() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
+    // count each time a match is made, needed for win function
     count++;
     console.log("Function has been called " + count + " times.");
     if (count === 9) {
-        winGame();
+      winGame();
     }
     resetBoard();
   }
 
+  // if cards don't match, unflip them
   function unflipCards() {
     // lock the board
     lockBoard = true;
@@ -70,6 +81,7 @@ function checkForMatch() {
       // unlocks board after 1.5 seconds
       resetBoard();
     }, 1500);
+    // subtract a life for each mismatch
     playerLives--;
     playerLivesCount.textContent = playerLives;
     if (playerLives === 0)
@@ -78,12 +90,14 @@ function checkForMatch() {
       }, 500);
   }
 
+  // reset board function
   function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
   }
 }
 
+// immediately invoked function expression (IIFE)
 (function shuffle() {
   cards.forEach((card) => {
     let randomPos = Math.floor(Math.random() * 18);
@@ -91,6 +105,7 @@ function checkForMatch() {
   });
 })();
 
+// game over function
 function gameOver() {
   lockBoard = true;
   const text = "Egads! 😵‍💫 Foiled again!";
@@ -119,6 +134,7 @@ function gameOver() {
   }, 500);
 }
 
+// win game function
 function winGame() {
   const text = "🤩 Awesome! You win! 🤩";
   setTimeout(() => {
@@ -145,11 +161,13 @@ function winGame() {
     // animate message div
     messageDiv.style.opacity = "1";
   }, 500);
-    console.log("Count has reached 9.");
+  console.log("Count has reached 9.");
 }
 
+// new game function
 function newGame() {
   location.reload();
 }
 
+// add event listener to each card
 cards.forEach((card) => card.addEventListener("click", flipCard));
