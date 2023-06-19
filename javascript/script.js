@@ -1,4 +1,14 @@
-// the memory cards
+// select the header element
+const header = document.querySelector("header");
+// set the text content of the header element
+header.textContent = "Memory Tarot";
+
+// create a new h1 element
+const h1 = document.querySelector("h1");
+// set the text content of the h1 element
+h1.textContent = "Match the cards to reveal your fate";
+
+// select the memory cards
 const cards = document.querySelectorAll(".memory-card");
 
 // sound effects
@@ -12,7 +22,6 @@ unflipSound.playbackRate = 2;
 // player lives
 const playerLivesCount = document.querySelector("span");
 let playerLives = 12;
-
 // link text
 playerLivesCount.textContent = playerLives;
 
