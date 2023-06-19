@@ -124,7 +124,7 @@ main {
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 77px;
+  font-size: 66px;
   padding: 20px;
   opacity: 0;
   transition: opacity 3s ease-in-out;
@@ -137,7 +137,7 @@ main {
   font-family: Papyrus;
   border: none;
   padding: 30px 99px;
-  font-size: 77px;
+  font-size: 66px;
   border-radius: 100px;
   cursor: pointer;
   margin-top: 20px;

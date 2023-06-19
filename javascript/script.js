@@ -150,7 +150,7 @@ function gameOver() {
 
 // win game function
 function winGame() {
-  showMessage("🤩 Awesome! You win! 🤩", "Play Again");
+  showMessage("🔮 Good fortune! You win! 🔮", "Play Again");
   console.log("Count has reached 9.");
 }
 
