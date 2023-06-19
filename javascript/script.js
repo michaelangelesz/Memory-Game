@@ -145,7 +145,7 @@ function showMessage(text, buttonText) {
 // game over function
 function gameOver() {
   lockBoard = true;
-  showMessage("Egads! 😵‍💫 Foiled again!", "New Game");
+  showMessage("🔮 Better luck next time! 🔮", "New Game");
 }
 
 // win game function
