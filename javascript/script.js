@@ -105,38 +105,8 @@ function checkForMatch() {
   });
 })();
 
-// game over function
-function gameOver() {
-  lockBoard = true;
-  const text = "Egads! 😵‍💫 Foiled again!";
-  setTimeout(() => {
-    const messageDiv = document.createElement("div");
-    messageDiv.setAttribute("id", "message");
-    messageDiv.textContent = text;
-
-    // create play again button
-    const playAgainBtn = document.createElement("button");
-    playAgainBtn.textContent = "New Game";
-    playAgainBtn.addEventListener("click", () => {
-      newGame();
-      messageDiv.style.opacity = "0";
-      setTimeout(() => {
-        messageDiv.remove();
-      }, 300);
-    });
-
-    // add play again button to message div
-    messageDiv.appendChild(playAgainBtn);
-    document.body.appendChild(messageDiv);
-
-    // animate message div
-    messageDiv.style.opacity = "1";
-  }, 500);
-}
-
-// win game function
-function winGame() {
-  const text = "🤩 Awesome! You win! 🤩";
+// show message function
+function showMessage(text, buttonText) {
   setTimeout(() => {
     // create message div
     const messageDiv = document.createElement("div");
@@ -145,7 +115,7 @@ function winGame() {
 
     // create play again button
     const playAgainBtn = document.createElement("button");
-    playAgainBtn.textContent = "Play Again";
+    playAgainBtn.textContent = buttonText;
     playAgainBtn.addEventListener("click", () => {
       newGame();
       messageDiv.style.opacity = "0";
@@ -155,12 +125,23 @@ function winGame() {
     });
 
     // add play again button to message div
-    messageDiv.appendChild(playAgainBtn);
+    messageDiv.appendChild(playAgainBtn); 
     document.body.appendChild(messageDiv);
 
     // animate message div
     messageDiv.style.opacity = "1";
   }, 500);
+}
+
+// game over function
+function gameOver() {
+  lockBoard = true;
+  showMessage("Egads! 😵‍💫 Foiled again!", "New Game");
+}
+
+// win game function
+function winGame() {
+  showMessage("🤩 Awesome! You win! 🤩", "Play Again");
   console.log("Count has reached 9.");
 }
 
