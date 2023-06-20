@@ -161,3 +161,9 @@ function newGame() {
 
 // add event listener to each card
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+
+
+// Cards from https://en.wikipedia.org/wiki/Rider-Waite_tarot_deck
+// Authorship: Arthur Edward Waite, Artist: Pamela Colman Smith.
+// Waite was the copyright holder and he died in 1942. His renwed copyright lasted until 1966, at which point the deck became part of the public domain.
