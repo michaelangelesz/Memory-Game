@@ -1,5 +1,4 @@
-# Milestone Project 1
-# Memory Game
+# Milestone Project 1: Memory Game
 
 As a kid, Memory was a favorite game. This game is dedicated to those carefree days of old school board games. As an adult, I have come to love the game of Tarot. Here, I combine the two in a new, modern atmosphere! 
 
