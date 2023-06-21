@@ -1,4 +1,5 @@
-# Milestone Project 1: Memory Game
+# Memory Game
+## Milestone Project 1
 
 As a kid, Memory was a favorite game. This game is dedicated to those carefree days of old school board games. As an adult, I have come to love the game of Tarot. Here, I combine the two in a new, modern atmosphere! 
 
@@ -16,8 +17,7 @@ I grabbed the Lives counter from here, and also the card flip animation:<br>
 
 With the Lives counter, a user could already "lose" my game. So I use the same logic and count each time a pair of cards is matched, for a win. After that, it was just a matter of making message divs to display to the user, with the option to restart/ play again.
 
-I also queried my personal [AI Assistant](https://www.macgpt.com/) from time to time. This helped me especially to work out the `count++;` solution, to allow a win.
-
+I also queried my personal [AI Assistant](https://www.macgpt.com/) from time to time. This helped me especially to work out the `count++;` solution, to allow a win. Shouts also for the help in working out the end-of-game message divs, and compiling citations.
 
 ## Rider Waite Smith Tarot Deck history and citation:
 
