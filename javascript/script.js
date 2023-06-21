@@ -3,9 +3,9 @@ const header = document.querySelector("header");
 // set the text content of the header element
 header.textContent = "Memory Tarot";
 
-// create a new h1 element
+// select the h1 element
 const h1 = document.querySelector("h1");
-// set the text content of the h1 element
+// set the text content of h1
 h1.textContent = "Match the cards to reveal your fate";
 
 // select the memory cards
@@ -166,4 +166,4 @@ cards.forEach((card) => card.addEventListener("click", flipCard));
 
 // Cards from https://en.wikipedia.org/wiki/Rider-Waite_tarot_deck
 // Authorship: Arthur Edward Waite, Artist: Pamela Colman Smith.
-// Waite was the copyright holder and he died in 1942. His renwed copyright lasted until 1966, at which point the deck became part of the public domain.
+// Waite was the copyright holder and he died in 1942. His renewed copyright lasted until 1966, at which point the deck became part of the public domain.
