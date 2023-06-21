@@ -1,0 +1,38 @@
+let cards = [
+  { imgSrc: "assets/1_theMagician.jpeg", name: "Magician", alt: "The Magician", framework: "magician" },
+  { imgSrc: "assets/1_theMagician.jpeg", name: "Magician", alt: "The Magician", framework: "magician" },
+  { imgSrc: "assets/2_theHighPriestess.jpeg", name: "High Priestess", alt: "The High Priestess", framework: "priestess" },
+  { imgSrc: "assets/2_theHighPriestess.jpeg", name: "High Priestess", alt: "The High Priestess", framework: "priestess" },
+  { imgSrc: "assets/3_theEmpress.jpeg", name: "Empress", alt: "The Empress", framework: "empress" },
+  { imgSrc: "assets/3_theEmpress.jpeg", name: "Empress", alt: "The Empress", framework: "empress" },
+  { imgSrc: "assets/4_theEmperor.jpeg", name: "Emperor", alt: "The Emperor", framework: "emperor" },
+  { imgSrc: "assets/4_theEmperor.jpeg", name: "Emperor", alt: "The Emperor", framework: "emperor" },
+  { imgSrc: "assets/5_theHierophant.jpeg", name: "Hierophant", alt: "The Hierophant", framework: "hierophant" },
+  { imgSrc: "assets/5_theHierophant.jpeg", name: "Hierophant", alt: "The Hierophant", framework: "hierophant" },
+  { imgSrc: "assets/6_theLovers.jpeg", name: "Lovers", alt: "The Lovers", framework: "lovers" },
+  { imgSrc: "assets/6_theLovers.jpeg", name: "Lovers", alt: "The Lovers", framework: "lovers" },
+  { imgSrc: "assets/7_theChariot.jpeg", name: "Chariot", alt: "The Chariot", framework: "chariot" },
+  { imgSrc: "assets/7_theChariot.jpeg", name: "Chariot", alt: "The Chariot", framework: "chariot" },
+  { imgSrc: "assets/8_Strength.jpeg", name: "Strength", alt: "Strength", framework: "strength" },
+  { imgSrc: "assets/8_Strength.jpeg", name: "Strength", alt: "Strength", framework: "strength" },
+  { imgSrc: "assets/9_theHermit.jpeg", name: "Hermit", alt: "The Hermit", framework: "hermit" }, 
+  { imgSrc: "assets/9_theHermit.jpeg", name: "Hermit", alt: "The Hermit", framework: "hermit" },
+];
+
+let section = document.createElement("section");
+
+for (let i = 0; i < cards.length; i++) {
+  let cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
+  cardDiv.innerHTML = `
+    <h2>${cards[i].name}</h2>
+    <img src="${cards[i].imgSrc}" alt="${cards[i].name}">
+    <p>Attribute 1: ${cards[i].attribute1}</p>
+    <p>Attribute 2: ${cards[i].attribute2}</p>
+    <p>Attribute 3: ${cards[i].attribute3}</p>
+    <p>Attribute 4: ${cards[i].attribute4}</p>
+  `;
+  section.appendChild(cardDiv);
+}
+
+document.body.appendChild(section);
