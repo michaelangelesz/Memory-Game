@@ -30,5 +30,4 @@ I acknowledge the creators and publishers of the Rider Waite Smith Tarot Deck fo
 - Year: 1909 (first edition)
 
 
-## Please see my second version of this project, Memory Albums! I actually think this one is prettier:
-https://michaelangelesz.github.io/Memory-Albums/ 
+## Please see my second version of this project, Memory Albums! I actually think this one is prettier: [Memory Albums](https://michaelangelesz.github.io/Memory-Albums/)
