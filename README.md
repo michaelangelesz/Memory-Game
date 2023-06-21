@@ -17,6 +17,8 @@ I grabbed the Lives counter from here, and also the card flip animation:<br>
 
 With the Lives counter, a user could already "lose" my game. So I use the same logic and count each time a pair of cards is matched, for a win. After that, it was just a matter of making message divs to display to the user, with the option to restart/ play again.
 
+I also queried my personal [AI assitant](https://www.macgpt.com/) from time to time. This helped me especially to work out the `count++;` solution, to allow a win.
+
 
 ## Rider Waite Smith Tarot Deck history and citation:
 
