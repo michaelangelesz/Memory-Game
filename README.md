@@ -9,12 +9,12 @@ The wooden background image is a photo of my hardwood floor, and the back-of-car
 
 In building this project, I referred to the following resources:
 
-For the cards layout, card flips, and match check:
-Learn Vanilla Javascript: Memory Game Tutorial
+For the cards layout, card flips, and match check:<br>
+Learn Vanilla Javascript: Memory Game Tutorial<br>
 https://www.youtube.com/watch?v=eMhiMsEC9Uk&list=PLLX1I3KXZ-YH-woTgiCfONMya39-Ty8qw&pp=iAQB
 
-I grabbed the Lives counter from here, and also the card flip animation:
-Awesome Vanilla JavaScript Memory Card Game Tutorial
+I grabbed the Lives counter from here, and also the card flip animation:<br>
+Awesome Vanilla JavaScript Memory Card Game Tutorial<br>
 https://youtu.be/-tlb4tv4mC4
 
 With the Lives counter, a user could already "lose" my game. So I use the same logic and count each time a pair of cards is matched, for a win. After that, it was just a matter of making message divs to display to the user, with the option to restart/ play again.
