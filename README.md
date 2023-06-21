@@ -1,5 +1,5 @@
-## Milestone Project 1
-## Memory Game
+# Milestone Project 1
+# Memory Game
 
 As a kid, Memory was a favorite game. This game is dedicated to those carefree days of old school board games. As an adult, I have come to love the game of Tarot. Here, I combine the two in a new, modern atmosphere! 
 
@@ -20,7 +20,7 @@ https://youtu.be/-tlb4tv4mC4
 With the Lives counter, a user could already "lose" my game. So I use the same logic and count each time a pair of cards is matched, for a win. After that, it was just a matter of making message divs to display to the user, with the option to restart/ play again.
 
 
-# Rider Waite Smith Tarot Deck history and citation:
+## Rider Waite Smith Tarot Deck history and citation:
 
 The Rider Waite Smith Tarot Deck is a classic tarot deck first published in 1909 by US Games Systems, Inc. It was created by Arthur Edward Waite, a British occultist and author, and Pamela Colman Smith, an American artist and illustrator. The deck features 78 cards, each with its own unique symbolism and meaning, and is widely used for divination, meditation, and spiritual guidance.
 
@@ -32,5 +32,5 @@ I acknowledge the creators and publishers of the Rider Waite Smith Tarot Deck fo
 - Year: 1909 (first edition)
 
 
-# Please see my second version of this project, Memory Albums! I actually think this one is prettier:
+## Please see my second version of this project, Memory Albums! I actually think this one is prettier:
 https://michaelangelesz.github.io/Memory-Albums/ 
