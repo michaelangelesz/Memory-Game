@@ -1,134 +1,62 @@
 let cards = [
-  { 
-  img: "assets/1_theMagician.jpeg", 
-  name: "Magician", 
-  alt: "The Magician", 
-  framework: "magician",
-  },
-  { 
-  img: "assets/1_theMagician.jpeg", 
-  name: "Magician", 
-  alt: "The Magician", 
-  framework: "magician",
-  },
-  { 
-  img: "assets/2_theHighPriestess.jpeg", 
-  name: "High Priestess", 
-  alt: "The High Priestess", 
-  framework: "priestess",
-  },
-  { 
-  img: "assets/2_theHighPriestess.jpeg", 
-  name: "High Priestess", 
-  alt: "The High Priestess", 
-  framework: "priestess",
-  },
-  { 
-  img: "assets/3_theEmpress.jpeg", 
-  name: "Empress", 
-  alt: "The Empress", 
-  framework: "empress",
-  },
-  { 
-  img: "assets/3_theEmpress.jpeg", 
-  name: "Empress", 
-  alt: "The Empress", 
-  framework: "empress",
-  },
-  { 
-  img: "assets/4_theEmperor.jpeg", 
-  name: "Emperor", 
-  alt: "The Emperor", 
-  framework: "emperor",
-  },
-  { 
-  img: "assets/4_theEmperor.jpeg", 
-  name: "Emperor", 
-  alt: "The Emperor", 
-  framework: "emperor",
-  },
-  { 
-  img: "assets/5_theHierophant.jpeg", 
-  name: "Hierophant", 
-  alt: "The Hierophant", 
-  framework: "hierophant",
-  },
-  { 
-  img: "assets/5_theHierophant.jpeg", 
-  name: "Hierophant", 
-  alt: "The Hierophant", 
-  framework: "hierophant",
-  },
-  { 
-  img: "assets/6_theLovers.jpeg", 
-  name: "Lovers", 
-  alt: "The Lovers", 
-  framework: "lovers",
-  },
-  { 
-  img: "assets/6_theLovers.jpeg", 
-  name: "Lovers", 
-  alt: "The Lovers", 
-  framework: "lovers",
-  },
-  { 
-  img: "assets/7_theChariot.jpeg", 
-  name: "Chariot", 
-  alt: "The Chariot", 
-  framework: "chariot",
-  },
-  { 
-  img: "assets/7_theChariot.jpeg", 
-  name: "Chariot", 
-  alt: "The Chariot", 
-  framework: "chariot",
-  },
-  { 
-  img: "assets/8_Strength.jpeg", 
-  name: "Strength", 
-  alt: "Strength", 
-  framework: "strength",
-  },
-  { 
-  img: "assets/8_Strength.jpeg", 
-  name: "Strength", 
-  alt: "Strength", 
-  framework: "strength",
-  },
-  { 
-  img: "assets/9_theHermit.jpeg", 
-  name: "Hermit", 
-  alt: "The Hermit", 
-  framework: "hermit",
-  }, 
-  { 
-  img: "assets/9_theHermit.jpeg", 
-  name: "Hermit", 
-  alt: "The Hermit", 
-  framework: "hermit",
-  },
+  { imgSrc: "assets/1_theMagician.jpeg", name: "Magician", alt: "The Magician", "data-framework": "magician", },
+  { imgSrc: "assets/1_theMagician.jpeg", name: "Magician", alt: "The Magician", "data-framework": "magician", },
+  { imgSrc: "assets/2_theHighPriestess.jpeg", name: "High Priestess", alt: "The High Priestess", "data-framework": "priestess", },
+  { imgSrc: "assets/2_theHighPriestess.jpeg", name: "High Priestess", alt: "The High Priestess", "data-framework": "priestess", },
+  { imgSrc: "assets/3_theEmpress.jpeg", name: "Empress", alt: "The Empress", "data-framework": "empress", },
+  { imgSrc: "assets/3_theEmpress.jpeg", name: "Empress", alt: "The Empress", "data-framework": "empress", },
+  { imgSrc: "assets/4_theEmperor.jpeg", name: "Emperor", alt: "The Emperor", "data-framework": "emperor", },
+  { imgSrc: "assets/4_theEmperor.jpeg", name: "Emperor", alt: "The Emperor", "data-framework": "emperor", },
+  { imgSrc: "assets/5_theHierophant.jpeg", name: "Hierophant", alt: "The Hierophant", "data-framework": "hierophant", },
+  { imgSrc: "assets/5_theHierophant.jpeg", name: "Hierophant", alt: "The Hierophant", "data-framework": "hierophant", },
+  { imgSrc: "assets/6_theLovers.jpeg", name: "Lovers", alt: "The Lovers", "data-framework": "lovers", },
+  { imgSrc: "assets/6_theLovers.jpeg", name: "Lovers", alt: "The Lovers", "data-framework": "lovers", },
+  { imgSrc: "assets/7_theChariot.jpeg", name: "Chariot", alt: "The Chariot", "data-framework": "chariot", },
+  { imgSrc: "assets/7_theChariot.jpeg", name: "Chariot", alt: "The Chariot", "data-framework": "chariot", },
+  { imgSrc: "assets/8_Strength.jpeg", name: "Strength", alt: "Strength", "data-framework": "strength", },
+  { imgSrc: "assets/8_Strength.jpeg", name: "Strength", alt: "Strength", "data-framework": "strength", },
+  { imgSrc: "assets/9_theHermit.jpeg", name: "Hermit", alt: "The Hermit", "data-framework": "hermit", }, 
+  { imgSrc: "assets/9_theHermit.jpeg", name: "Hermit", alt: "The Hermit", "data-framework": "hermit", },
 ];
 
-let section = document.createElement("section");
+// Create a new array to store the flipped cards
+let flippedCards = [];
+
+for (let i = cards.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [cards[i], cards[j]] = [cards[j], cards[i]];
+}
 
 for (let i = 0; i < cards.length; i++) {
-  let cardDiv = document.createElement("div");
+  const cardDiv = document.createElement("div");
   cardDiv.classList.add("memory-card");
-  cardDiv.setAttribute('data-name', cards[i].name);
-  cardDiv.setAttribute('data-alt', cards[i].alt);
-  cardDiv.setAttribute('data-framework', cards[i].framework);
+  cardDiv.setAttribute("data-framework", cards[i]["data-framework"]);
+  cardDiv.innerHTML = `
+  <img class="front-face" src="${cards[i].imgSrc}" alt="${cards[i].alt}">
+  <img class="back-face" src="assets/pearTree.jpeg" alt="card back">
+  `;
 
-  let cardImg = document.createElement("img");
-  cardImg.classList.add("front-face");
-  cardImg.src = cards[i].img;
-  cardImg.alt = cards[i].name;
-  cardDiv.appendChild(cardImg);
+  // Add event listener to flip the card on click
+  cardDiv.addEventListener("click", function () {
+    cardDiv.classList.toggle("flip");
 
-  let backImg = document.createElement("img");
-  backImg.classList.add("back-face");
-  backImg.src = "assets/backOfCard.jpg";
-  backImg.alt = "Back of Card";
-  cardDiv.appendChild(backImg);
+    // Add the data-framework value of the flipped card to the array
+    flippedCards.push(cardDiv.getAttribute("data-framework"));
+
+    // Check for a match if two cards have been flipped
+    if (flippedCards.length === 2) {
+      if (flippedCards[0] === flippedCards[1]) {
+        // The cards match
+        console.log("Match!");
+      } else {
+        // The cards do not match
+        console.log("No match.");
+      }
+
+      // Clear the array for the next pair of flipped cards
+      flippedCards = [];
+    }
+  });
 
   section.appendChild(cardDiv);
 }
