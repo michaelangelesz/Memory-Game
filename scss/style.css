@@ -1,0 +1,138 @@
+/* Global styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: antiquewhite;
+  background: linear-gradient(to right, antiquewhite, #a5694f);
+  background-image: url(../assets/background.jpg);
+  background-position: center center;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  text-align: center;
+  font-family: Papyrus, sans-serif;
+  margin: 22px auto;
+}
+
+header {
+  color: antiquewhite;
+  text-align: center;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(66, 33, 9);
+  height: 9vh;
+  width: 100vw;
+  background: linear-gradient(to right, transparent 0%, rgb(66, 33, 9) 3%, rgb(66, 33, 9) 97%, transparent 100%);
+  margin-bottom: 11px;
+}
+
+h1 {
+  color: rgb(66, 33, 9);
+  text-align: center;
+  letter-spacing: 1.1px;
+  font-size: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* player lives counter */
+main, span {
+  font-family: Papyrus, sans-serif;
+  font-size: 3rem;
+  color: rgb(66, 33, 9);
+}
+
+/* card style and layout */
+.memory-game {
+  width: 900px;
+  height: 625px;
+  margin: auto;
+  margin-top: 11px;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(16.667% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.memory-card:active {
+  transform: scale(0.98);
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  position: absolute;
+  border-radius: 7px;
+  background: antiquewhite;
+  backface-visibility: hidden;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+/* win/lose message screens */
+#message {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: antiquewhite;
+  background: linear-gradient(to right, antiquewhite, #a5694f);
+  background-image: url(../assets/background.jpg);
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: 100% auto;
+  font-family: Papyrus, sans-serif;
+  color: rgb(66, 33, 9);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 66px;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  z-index: 1;
+}
+
+#message button {
+  background-color: antiquewhite;
+  color: rgb(66, 33, 9);
+  font-family: Papyrus, sans-serif;
+  border: none;
+  padding: 30px 99px;
+  font-size: 66px;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 20px;
+}/*# sourceMappingURL=style.css.map */
