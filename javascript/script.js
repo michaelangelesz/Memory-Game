@@ -12,7 +12,7 @@ h1.textContent = "Match the cards to reveal your fate";
 const cards = document.querySelectorAll(".memory-card");
 
 // sound effects
-const flipSound = new Audio("assets/cardflip.mp3");
+const flipSound = new Audio("assets/cardflip.mp3"); 
 flipSound.volume = 0.5;
 flipSound.playbackRate = 2;
 const unflipSound = new Audio("assets/unflip.mp3");
