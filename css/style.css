@@ -9,18 +9,18 @@ body {
   height: 100vh;
   width: 100vw;
   background: antiquewhite;
-  background: linear-gradient(to right, #efdecd, #a5694f);
-  background-image: url("../assets/background.jpg");
+  background: linear-gradient(to right, antiquewhite, #a5694f);
+  background-image: url(../assets/background.jpg);
   background-position: center center;
   background-size: 100% auto;
   background-repeat: repeat;
   text-align: center;
-  font-family: Papyrus;
+  font-family: Papyrus, sans-serif;
   margin: 22px auto;
 }
 
 header {
-  color: rgb(237, 202, 176);
+  color: antiquewhite;
   text-align: center;
   font-size: 3.5rem;
   letter-spacing: 3px;
@@ -30,7 +30,7 @@ header {
   background-color: rgb(66, 33, 9);
   height: 9vh;
   width: 100vw;
-  background: linear-gradient(to right, transparent 0%, rgb(65, 30, 5) 3%, rgb(65, 30, 5) 97%, transparent 100%);
+  background: linear-gradient(to right, transparent 0%, rgb(66, 33, 9) 3%, rgb(66, 33, 9) 97%, transparent 100%);
   margin-bottom: 11px;
 }
 
@@ -46,9 +46,9 @@ h1 {
 
 /* player lives counter */
 main, span {
-  font-family: papyrus;
+  font-family: Papyrus, sans-serif;
   font-size: 3rem;
-  color: #593626;
+  color: rgb(66, 33, 9);
 }
 
 /* card style and layout */
@@ -108,13 +108,13 @@ main, span {
   width: 100%;
   height: 100%;
   background: antiquewhite;
-  background: linear-gradient(to right, #efdecd, #a5694f);
-  background-image: url("../assets/background.jpg");
+  background: linear-gradient(to right, antiquewhite, #a5694f);
+  background-image: url(../assets/background.jpg);
   background-position: center center;
   background-repeat: repeat;
   background-size: 100% auto;
-  font-family: papyrus;
-  color: #593626;
+  font-family: Papyrus, sans-serif;
+  color: rgb(66, 33, 9);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -127,8 +127,8 @@ main, span {
 
 #message button {
   background-color: antiquewhite;
-  color: #593626;
-  font-family: Papyrus;
+  color: rgb(66, 33, 9);
+  font-family: Papyrus, sans-serif;
   border: none;
   padding: 30px 99px;
   font-size: 66px;
